@@ -93,6 +93,7 @@ const fg = ( main ) => {
     main.scaleCanvas();
     main.resizeCanvas(cnvW, cnvH);
     main.centerCanvas();
+    sw.max = area / 180000;
   };
 
   main.resetVals = () => {

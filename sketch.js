@@ -71,15 +71,19 @@ const fg = ( main ) => {
     cnv.position(cnvX, cnvY);
   };
 
+  main.centerPen = () => {
+    x = cnvW / 2;
+    y = cnvH / 2;
+    targetX = cnvW / 2;
+    targetY = cnvH / 2;
+  };
+
   main.setup = () => {
     main.scaleCanvas();
     cnv = main.createCanvas(cnvW, cnvH);
     main.centerCanvas();
 
-    x = main.width / 2;
-    y = main.height / 2;
-    targetX = main.width / 2;
-    targetY = main.height / 2;
+    main.centerPen();
 
     sw.max = area / 180000;
 
@@ -90,10 +94,13 @@ const fg = ( main ) => {
   };
 
   main.windowResized = () => {
-    main.scaleCanvas();
-    main.resizeCanvas(cnvW, cnvH);
-    main.centerCanvas();
-    sw.max = area / 180000;
+    if (micStarted == false && blankPage == true) {
+      main.scaleCanvas();
+      main.resizeCanvas(cnvW, cnvH);
+      main.centerCanvas();
+      main.centerPen();
+      sw.max = area / 180000;
+    }
   };
 
   main.resetVals = () => {
@@ -102,12 +109,12 @@ const fg = ( main ) => {
 
     noiseScale = 0.001;
 
-    x = cnvW / 2;
-    y = cnvH / 2;
-    targetX = cnvW / 2;
-    targetY = cnvH / 2;
+    main.centerPen();
 
-    sw.level = 0;
+    sw = {
+      level: 0,
+      max: 0
+    };
 
     a = {
       level: 255,

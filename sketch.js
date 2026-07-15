@@ -81,8 +81,8 @@ const fg = ( main ) => {
   main.setup = () => {
     main.scaleCanvas();
     cnv = main.createCanvas(cnvW, cnvH);
+    cnv.style('display', 'block');
     main.centerCanvas();
-
     main.centerPen();
 
     sw.max = area / 180000;

@@ -96,7 +96,7 @@ const fg = ( main ) => {
     };
 
   main.showHeader = () => {
-    main.loadFont('QEScottWilliams.ttf', font => {
+    main.loadFont('/o-m-n-d.github.io/QEScottWilliams.ttf', font => {
       main.noStroke();
       main.fill(0, 0, 60);
       main.textFont(font);
@@ -107,7 +107,7 @@ const fg = ( main ) => {
   };
 
   main.homePage = () => {
-    main.loadFont('QEScottWilliams.ttf', font => {
+    main.loadFont('/o-m-n-d.github.io/QEScottWilliams.ttf', font => {
       main.noStroke();
       main.fill(0, 0, 60);
       main.textFont(font);
